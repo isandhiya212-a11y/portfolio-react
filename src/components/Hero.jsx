@@ -1,7 +1,12 @@
 function Hero() {
   return (
     <section id="hero" className="hero">
-      <h1>Hello, I'm Sandhiya 👋</h1>
+
+      <h1>
+        
+        Hello, I'm <br />
+        <span>Sandhiya 👋</span>
+      </h1>
 
       <h2>Frontend Developer | React Developer</h2>
 
@@ -13,6 +18,7 @@ function Hero() {
       <a href="/resume.pdf" download>
         <button>Download Resume</button>
       </a>
+
     </section>
   );
 }
