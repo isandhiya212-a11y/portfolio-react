@@ -1,10 +1,15 @@
 function Contact() {
   return (
-    <section id="contact" className="contact">
+    <section
+      id="contact"
+      className="contact"
+      data-aos="flip-up"
+    >
+
       <h2>Contact Me</h2>
 
       <p>
-        Feel free to contact me for job opportunities.
+        Feel free to contact me for internships and job opportunities.
       </p>
 
       <div className="contact-info">
@@ -24,21 +29,24 @@ function Contact() {
           >
             View LinkedIn
           </a>
+
         </div>
 
         <div className="contact-card">
           <h3>GitHub</h3>
 
           <a
-            href="https://github.com/YOUR_GITHUB_USERNAME"
+            href="https://github.com/isandhiya212-a11y"
             target="_blank"
             rel="noreferrer"
           >
             Visit GitHub
           </a>
+
         </div>
 
       </div>
+
     </section>
   );
 }

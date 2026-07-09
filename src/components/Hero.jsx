@@ -1,9 +1,11 @@
 function Hero() {
   return (
-    <section id="hero" className="hero">
-
+    <section
+      id="hero"
+      className="hero"
+      data-aos="fade-up"
+    >
       <h1>
-        
         Hello, I'm <br />
         <span>Sandhiya 👋</span>
       </h1>
@@ -12,13 +14,12 @@ function Hero() {
 
       <p>
         I build responsive and user-friendly web applications using React,
-        JavaScript, HTML, and CSS.
+        JavaScript, HTML, CSS, and modern web technologies.
       </p>
 
       <a href="/resume.pdf" download>
         <button>Download Resume</button>
       </a>
-
     </section>
   );
 }
