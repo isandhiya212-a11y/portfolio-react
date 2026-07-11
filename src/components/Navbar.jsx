@@ -4,48 +4,61 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="navbar">
-      <h2 className="logo">Sandhiya</h2>
+    <>
+      <nav className="navbar">
+        {/* Logo */}
+        <h2 className="logo">Sandhiya</h2>
 
-      <div
-        className="menu-icon"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? "✖" : "☰"}
-      </div>
+        {/* Hamburger Menu */}
+        <div
+          className="menu-icon"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "✖" : "☰"}
+        </div>
 
-      <ul className={menuOpen ? "nav-links active" : "nav-links"}>
-        <li>
-          <a href="#hero" onClick={() => setMenuOpen(false)}>
-            Home
-          </a>
-        </li>
+        {/* Navigation Links */}
+        <ul className={menuOpen ? "nav-links active" : "nav-links"}>
+          <li>
+            <a href="#hero" onClick={() => setMenuOpen(false)}>
+              Home
+            </a>
+          </li>
 
-        <li>
-          <a href="#about" onClick={() => setMenuOpen(false)}>
-            About
-          </a>
-        </li>
+          <li>
+            <a href="#about" onClick={() => setMenuOpen(false)}>
+              About
+            </a>
+          </li>
 
-        <li>
-          <a href="#skills" onClick={() => setMenuOpen(false)}>
-            Skills
-          </a>
-        </li>
+          <li>
+            <a href="#skills" onClick={() => setMenuOpen(false)}>
+              Skills
+            </a>
+          </li>
 
-        <li>
-          <a href="#projects" onClick={() => setMenuOpen(false)}>
-            Projects
-          </a>
-        </li>
+          <li>
+            <a href="#projects" onClick={() => setMenuOpen(false)}>
+              Projects
+            </a>
+          </li>
 
-        <li>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>
-            Contact
-          </a>
-        </li>
-      </ul>
-    </nav>
+          <li>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      {/* Overlay */}
+      {menuOpen && (
+        <div
+          className="overlay"
+          onClick={() => setMenuOpen(false)}
+        ></div>
+      )}
+    </>
   );
 }
 
