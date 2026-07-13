@@ -3,83 +3,111 @@
 ========================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
+html,
+body,
+#root{
+    width:100%;
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
-    scroll-behavior:smooth;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
     background:#f5f5f5;
+    overflow-x:hidden;
 }
-
 /* =========================
    Navbar
 ========================= */
 
-.navbar {
-  width: 100%;
-  background: #222;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 60px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.navbar{
+    width:100%;
+    background:#222;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 60px;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.logo {
-  font-size: 30px;
-  font-weight: bold;
+.logo{
+    font-size:30px;
+    font-weight:700;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 30px;
+/* Desktop Menu */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    list-style:none;
+    gap:30px;
 }
 
-.nav-links li {
-  list-style: none;
+.nav-links li{
+    list-style:none;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  transition: 0.3s;
+.nav-links li a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    font-weight:500;
+    transition:0.3s;
 }
 
-.nav-links a:hover {
-  color: #0d6efd;
+.nav-links li a:hover{
+    color:#0d6efd;
 }
 
-.menu-icon {
-  display: none;
-  font-size: 32px;
-  cursor: pointer;
-  color: white;
+/* Hide Hamburger on Desktop */
+
+.menu-icon{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:white;
+}
+
+/* Overlay */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:999;
 }
 /* =========================
    Hero
 ========================= */
 
 .hero{
+    width:100%;
     min-height:100vh;
+
     background:#0d6efd;
-    color:white;
+    color:#fff;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+
     text-align:center;
 
-    padding:20px;
+    padding:100px 20px;
+
+    overflow:hidden;
 }
 
 .hero h1{
@@ -312,15 +340,6 @@ body{
 
 /* Overlay */
 
-.overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.5);
-    z-index:999;
-}
 
 /* =========================
    Mobile Responsive
@@ -328,30 +347,30 @@ body{
 
 @media screen and (max-width:768px){
 
-/* Navbar */
+  /* Navbar */
 
-.navbar{
+  .navbar{
     padding:15px 20px;
     position:fixed;
     top:0;
     left:0;
     width:100%;
-}
+  }
 
-.logo{
+  .logo{
     font-size:28px;
-}
+  }
 
-.menu-icon{
+  .menu-icon{
     display:block;
     font-size:32px;
     cursor:pointer;
-    z-index:1001;
-}
+    z-index:1002;
+  }
 
-/* Right Side Menu */
+  /* Right Side Sliding Menu */
 
-.nav-links{
+  .nav-links{
     position:fixed;
     top:0;
     right:-260px;
@@ -361,117 +380,120 @@ body{
 
     display:flex;
     flex-direction:column;
-    align-items:center;
+    justify-content:flex-start;
+    align-items:flex-start;
 
     padding-top:90px;
-    gap:25px;
+    gap:0;
 
-    transition:0.4s ease;
-    z-index:1000;
-}
+    transition:right .4s ease;
+    z-index:1001;
+  }
 
-.nav-links.active{
+  .nav-links.active{
     right:0;
-}
+  }
 
-.nav-links li{
+  .nav-links li{
     width:100%;
-    text-align:center;
-}
+    list-style:none;
+  }
 
-.nav-links a{
+  .nav-links li a{
     display:block;
     width:100%;
-    padding:15px 0;
-    font-size:18px;
+    padding:18px 30px;
     color:white;
-}
+    text-decoration:none;
+    border-bottom:1px solid #444;
+    text-align:left;
+    font-size:18px;
+  }
 
-.nav-links a:hover{
+  .nav-links li a:hover{
     background:#0d6efd;
-}
+  }
 
-/* Hero */
+  /* Hero */
 
-.hero{
-    min-height:100vh;
+  .hero{
     padding:160px 20px 80px;
-}
+  }
 
-.hero h1{
-    font-size:40px;
-    line-height:1.5;
+  .hero h1{
+    font-size:42px;
+    line-height:1.4;
     margin-bottom:35px;
-}
+  }
 
-.hero h2{
+  .hero h2{
     font-size:22px;
     margin-bottom:20px;
-}
+  }
 
-.hero p{
+  .hero p{
+    max-width:320px;
     font-size:17px;
     line-height:1.8;
-    max-width:100%;
-}
+  }
 
-.hero button{
+  .hero button{
     width:220px;
     margin-top:35px;
-}
+  }
 
-/* About */
+  /* About */
 
-.about,
-.skills,
-.projects,
-.contact{
+  .about,
+  .skills,
+  .projects,
+  .contact{
     padding:60px 20px;
-}
+  }
 
-.about h2,
-.skills h2,
-.projects h2,
-.contact h2{
+  .about h2,
+  .skills h2,
+  .projects h2,
+  .contact h2{
     font-size:30px;
-}
+  }
 
-/* Skills */
+  /* Skills */
 
-.skill-grid{
+  .skill-grid{
     grid-template-columns:1fr;
-}
+  }
 
-/* Projects */
+  /* Projects */
 
-.project-container{
+  .project-container{
     grid-template-columns:1fr;
-}
+  }
 
-.project-buttons{
+  .project-buttons{
     flex-direction:column;
-}
+  }
 
-.project-buttons button{
+  .project-buttons button{
     width:100%;
-}
+  }
 
-/* Contact */
+  /* Contact */
 
-.contact-info{
+  .contact-info{
     flex-direction:column;
     align-items:center;
-}
+  }
 
-.contact-card{
+  .contact-card{
     width:100%;
     max-width:350px;
-}
+  }
 
-/* Footer */
+  /* Footer */
 
-.footer h3{
+  .footer h3{
     font-size:24px;
-}
+  }
 
 }
